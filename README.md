@@ -1,8 +1,8 @@
 # creati-docker
+
 creati-docker
 
 ## [Go to develop branch](https://github.com/CreatiCoding/creati-docker/tree/develop)
-
 
 ## openssl, NginX, Node.js, express, docker 로 https localhost 구현
 
@@ -143,4 +143,16 @@ docker run -d --name creati-docker-nginx-instance -p 4000:80 creati-docker:nginx
 ```
 
 
+
+
+
+
+
+- openssl 로컬에서의 발급 절차
+
+```
+openssl genrsa -des3 -out private.key 2048
+openssl req -new -key private.key -out out.csr -config "/usr/local/etc/openssl/openssl.cnf"
+openssl req -key private.key -x509 -nodes -sha1 -days 365 -in out.csr -out crt.pem
+```
 
