@@ -154,5 +154,6 @@ docker run -d --name creati-docker-nginx-instance -p 4000:80 creati-docker:nginx
 openssl genrsa -des3 -out private.key 2048
 openssl req -new -key private.key -out out.csr -config "/usr/local/etc/openssl/openssl.cnf"
 openssl req -key private.key -x509 -nodes -sha1 -days 365 -in out.csr -out crt.pem
+openssl rsa -in private.key -out newkey.pem
 ```
 
