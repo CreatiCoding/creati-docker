@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  node:
+    build: ./node
+    ports:
+      - 3000:3000
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./openssl:/var/etc/openssl
+    ports:
+      - 4000:80
+      - 8443:443
+    depends_on:
+      - node
